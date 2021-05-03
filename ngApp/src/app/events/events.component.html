@@ -1,1 +1,21 @@
-<p>events works!</p>
+
+<div class="row mt-5 shadow-lg">
+    <div class="col-md-12">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Promo Code: ILOVESOUP</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row mt-5">
+    <div class="col-md-4 mb-3" *ngFor=" let Item of addItemData">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">{{Item.Name}}</h5>
+            </div>
+        </div>
+    </div>
+</div>
