@@ -1,0 +1,8 @@
+.background {
+    background-image: url("https://cdn.serif.com/affinity/img/store/neptune-brush-pack/sample-large-1-081120191520@2x.jpg");
+    height: 600px;
+}
+
+.content {
+    width: 100% !important;
+}

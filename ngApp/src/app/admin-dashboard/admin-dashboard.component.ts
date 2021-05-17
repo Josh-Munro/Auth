@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../auth.service';
+import {LoginComponent} from '../login/login.component'
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -16,6 +17,8 @@ export class AdminDashboardComponent implements OnInit {
      type: String
     }
   }
+
+  isSuccessful = true;
 
   constructor(private _auth: AuthService) { }
 

@@ -28,6 +28,8 @@ router.post('/register', (req, res) => {
             console.log(error)
         } else {
             res.status(200).send(registeredUser)
+            console.log('Registered');
+            res.send('Registered');
         }
     })
 })
