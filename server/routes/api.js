@@ -29,7 +29,7 @@ router.post('/register', (req, res) => {
         } else {
             res.status(200).send(registeredUser)
             console.log('Registered');
-            res.send('Registered');
+            //res.send('Registered');
         }
     })
 })
@@ -48,7 +48,8 @@ router.post('/login', (req, res) => {
                 if (user.Password !== userData.Password) {
                     res.status(401).send('Invalid password')
                 } else {
-                    res.status(200).send(user)
+                   // res.status(200).send(user)
+                    res.json(user);
                 }
             }
     })
@@ -121,6 +122,12 @@ router.post('/additem', (req, res) => {
             res.status(200).send(addedItem)
         }
     })
+})
+
+
+//Update user name
+router.put('/edituser/:user', (req, res) => {
+    
 })
 
 module.exports = router;

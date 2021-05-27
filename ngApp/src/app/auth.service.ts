@@ -10,6 +10,8 @@ export class AuthService {
   private _loginUrl = "http://localhost:3000/api/login";
   private _addItemUrl = "http://localhost:3000/api/additem";
 
+
+
   constructor(private http: HttpClient) { }
 
   registerUser(user) {
@@ -19,10 +21,19 @@ export class AuthService {
   loginUser(user) {
     console.log(user)
     return this.http.post<any>(this._loginUrl, user)
+    
+  }
+
+  currentUser(user) {
+    return this.http.get<any>(this._loginUrl, user)
   }
 
   addItem(item) {
     console.log(item)
     return this.http.post<any>(this._addItemUrl, item)
+  }
+
+  editUser(user) {
+   
   }
 }

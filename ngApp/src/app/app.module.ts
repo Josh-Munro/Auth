@@ -14,6 +14,8 @@ import { SpecialEventsComponent } from './special-events/special-events.componen
 import { AuthService } from './auth.service';
 import { EventService } from './event.service';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     LoginComponent,
     EventsComponent,
     SpecialEventsComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    DashboardComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
