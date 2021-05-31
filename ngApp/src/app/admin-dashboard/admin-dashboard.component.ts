@@ -9,6 +9,7 @@ import {LoginComponent} from '../login/login.component'
 })
 export class AdminDashboardComponent implements OnInit {
 
+  //Item data array with appropraite fields
   addItemData = {
     Name: {
       type: String
@@ -17,14 +18,16 @@ export class AdminDashboardComponent implements OnInit {
      type: String
     }
   }
-
+//If successful
   isSuccessful = true;
 
+  //Passing auth service in constructor
   constructor(private _auth: AuthService) { }
 
   ngOnInit(): void {
   }
 
+  //Add item method passes data to the auth service 
   addItem() {
     console.log(this.addItemData)
     this._auth.addItem(this.addItemData)

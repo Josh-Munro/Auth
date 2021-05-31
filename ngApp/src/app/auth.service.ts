@@ -38,6 +38,7 @@ export class AuthService {
     return this.http.get<any>(this._loginUrl, user)
   }
 
+  //Adding item service function 
   addItem(item) {
     console.log(item)
     return this.http.post<any>(this._addItemUrl, item)

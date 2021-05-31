@@ -2,22 +2,23 @@
 <div class="row no-gutters no-margin">
     <div class="col-md-6">
 
+            <!-- Email field in the form -->
                 <form class="form">
                     <div class="form-group">
                         <label for="">Email</label>
                         <input [(ngModel)]="registerUserData.Email" name="email" type="text" class="form-control rounded-0" target="blank" placeholder="email" required>
                     </div>
-
+            <!-- Password field in the form-->
                     <div class="form-group">
                         <label for="">Password</label>
                         <input [(ngModel)]="registerUserData.Password" name="password" type="password" class="form-control rounded-0" required>
                     </div>
-
+                    <!-- Is admin input field -->
                     <div class="form-group">
                         <label for="">IsAdmin</label>
                         <input [(ngModel)]="registerUserData.IsAdmin" name="isAdmin" type="checkbox">
                     </div>
-
+                    <!-- Button send data to the service -->
                     <button (click)="registerUser()" type="button" class="btn btn-primary float-right">Register</button>
                 </form>
 </div>

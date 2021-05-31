@@ -9,6 +9,7 @@ import {Router} from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
+  //Register user data
   registerUserData = {
     Email: {
       type: String
@@ -21,17 +22,20 @@ export class RegisterComponent implements OnInit {
     }
   }
 
+  //Contructor passing in route and auth service
   constructor(private _auth: AuthService, private _router: Router) { }
 
   ngOnInit(): void {
   }
 
+  //Registering user function -- uses data from array and passes to _auth register user
   registerUser() {
     console.log(this.registerUserData)
     this._auth.registerUser(this.registerUserData)
    .subscribe(
      res => {
       console.log(res)
+      //If successful takes user to dashboard
       this._router.navigate(['dashboard'])
      },
      err => console.log(err)

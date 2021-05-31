@@ -3,14 +3,20 @@
     <h1>{{ msg }}</h1>
 
    <h1>Use Token example</h1>
-
+    <!-- Use token form -->
     <form @submit="postLogin" method="post">
+        <!-- Item name label -->
       <label for="">Item Name</label>
+      <!-- name input field -->
       <input type="text" name="email" v-model="item.Email"> <br>
+      <!-- Promo code label -->
       <label for="">Promo Code</label>
+      <!-- Promo code input field -->
       <input type="password" name="password" v-model="item.Password"> <br>
+      <!-- Submitting data -->
       <button type="submit">Redeem Item</button>
 
+        <!-- Elements displayed depending on input -->
       <h1 v-if="failed">Could not redeem item</h1>
       <h1 v-if="redeemed">Item redeemed</h1>
     </form>

@@ -2,14 +2,18 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
 
-
+    <!-- Login form -->
    <h1>Login example</h1>
 
     <form @submit="postLogin" method="post">
+      <!-- Name input field -->
       <input type="text" name="email" v-model="user.Email"> <br>
+      <!-- Password input field -->
       <input type="password" name="password" v-model="user.Password"> <br>
+      <!-- Submit button -->
       <button type="submit">Login</button>
 
+    <!-- If error is returned show this -->
       <h1 v-if="success">Invalid Credentials</h1>
     </form>
 
@@ -19,11 +23,12 @@
 
 <script>
 
+//Imports
 import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
-
+//Using vue and axios
 Vue.use(VueAxios, axios)
 
 export default {
@@ -33,6 +38,7 @@ export default {
   },
   data() {
     return {
+      //User data array. Information is passed from input fields to axios
       user: {
         Email: null,
         Password: null,
@@ -44,7 +50,7 @@ export default {
     }
   },
   methods: {
-
+    //Login mehtod called uses axios to pass information
     postLogin(e) {
       this.axios.post("http://localhost:3000/api/login", this.user)
       .then((result)=>{

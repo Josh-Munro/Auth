@@ -4,12 +4,15 @@
                 <h1>Admin dashboard</h1>
                 <div class="row">
                     <div class="col-md-4">
+                        <!-- Creating the form -->
                         <form class="form">
+                            <!-- Item name -->
                             <div class="form-group">
                                 <label for="">Item Name</label>
                                 <input [(ngModel)]="addItemData.Name" name="email" type="text" class="form-control rounded-0" target="blank" placeholder="email" required>
                             </div>
-        
+                            
+                            <!-- Item description field -->
                             <div class="form-group">
                                 <label for="">Item Description</label>
                                 <input [(ngModel)]="addItemData.Description" name="password" type="text" class="form-control rounded-0" required>
@@ -19,7 +22,7 @@
                                 <label for="">PromoCode</label>
                                 <input [(ngModel)]="addItemData.PromoCode" name="password" type="text" class="form-control rounded-0" required>
                             </div> -->
-
+                            <!-- addItem funciton is called when button is clicked -->
                             <button (click)="addItem()" type="button" class="btn btn-primary float-right mt-3">Add Item</button>
                             <h1 *ngIf="isSuccessful">Testing</h1>
                         </form>

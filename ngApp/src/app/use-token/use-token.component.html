@@ -1,11 +1,14 @@
 <form class="form">
 
+    <!-- Name label -->
     <label for="name">Name</label> <br>
+    <!-- Input field for the name -->
     <input [(ngModel)]="loginUserData.Email" name="name" type="text" class="form-control rounded-0" target="blank" placeholder="email" required>
-
+    <!-- Promocode label -->
     <label for="description">Promocode</label> <br>
+    <!-- Promocode input field -->
     <input [(ngModel)]="loginUserData.Password" name="description" type="text" class="form-control rounded-0" target="blank" placeholder="email" required> <br>
-
+    <!-- use token button -->
     <button (click)="useToken()"type="button" class="btn btn-success float-right">Redeem Item</button>
 
     <h1 *ngIf="isSuccessful">Item Redeemed Successfully</h1>
