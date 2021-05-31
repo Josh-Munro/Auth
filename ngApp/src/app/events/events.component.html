@@ -9,11 +9,13 @@
     </div>
 </div>
 
-
+<!-- New row -->
 <div class="row mt-5">
+    <!-- Looping and displaying each item from the database -->
     <div class="col-md-4 mb-3" *ngFor=" let Item of addItemData">
         <div class="card text-center">
             <div class="card-body">
+                <!-- Displaying item name -->
                 <h5 class="card-title">{{Item.Name}}</h5>
             </div>
         </div>

@@ -4,6 +4,9 @@ import home from '@/components/home'
 import register from '@/components/register'
 import login from '@/components/login'
 import dashboard from '@/components/dashboard'
+import addItem from '@/components/addItem'
+import displayItem from '@/components/displayItem'
+import useToken from '@/components/test'
 
 // use router
 Vue.use(Router)
@@ -30,6 +33,21 @@ export default new Router({
       path: '/dashboard',
       name: 'dashboard',
       component: dashboard
+    },
+    {
+      path: '/addItem',
+      name: 'addItem',
+      component: addItem
+    },
+    {
+      path: '/listItem',
+      name: 'listItem',
+      component: displayItem
+    },
+    {
+      path: '/useToken',
+      name: 'useToken',
+      component: useToken
     }
   ]
 })

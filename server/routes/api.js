@@ -56,24 +56,31 @@ router.post('/login', (req, res) => {
 
 })
 
+//Use Token
+router.post('/useToken', (req, res) => {
+    let tokenData = req.body
+
+    Item.findOne({Name: tokenData.Email}, (error, item) => {
+        if (error) {
+            console.log(error)
+        } else {
+            if(!item) {
+                res.status(401).send('Invalid Item')
+            } else 
+                if (item.PromoCode !== tokenData.Password) {
+                    res.status(401).send('Invalid Promo Code')
+                } else {
+                    res.json(item);
+                }
+            }
+    })
+
+})
+
+
 //events api
 router.get('/events', (req, res) => {
     
-    // let events = [
-    //     {
-    //         "_id": "1",
-    //         "name": "Auto Expo",
-    //         "description": "Hello there"
-    //     },
-
-    //     {
-    //         "_id": "2",
-    //         "name": "6Six60",
-    //         "description": "Hello again"
-    //     }
-    // ]
-
-    //res.json(events)
 
     Item.find((error, item) => {
         if(error) {

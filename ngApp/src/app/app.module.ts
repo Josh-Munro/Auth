@@ -16,6 +16,7 @@ import { EventService } from './event.service';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { UseTokenComponent } from './use-token/use-token.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     SpecialEventsComponent,
     AdminDashboardComponent,
     DashboardComponent,
-    EditUserComponent
+    EditUserComponent,
+    UseTokenComponent
   ],
   imports: [
     BrowserModule,

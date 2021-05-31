@@ -12,7 +12,7 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      test: JSON.parse(localStorage.getItem('user')).Email
+      test: JSON.parse(localStorage.getItem('user')).IsAdmin
     }
   }
 }

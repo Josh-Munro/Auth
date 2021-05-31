@@ -1,4 +1,4 @@
-
+<!-- creating the div for containing the form elements -->
 <div class="row pt-5">
     <div class="col-md-6 mx-auto">
         <div class="card rouded-0">
@@ -6,19 +6,24 @@
                 <h3 class="mb-0">Login</h3>
             </div>
             <div class="card-body">
-
+                <!-- Creating the form -->
                 <form class="form">
                     <div class="form-group">
+                        <!-- Email label -->
                         <label for="">Email</label>
+                        <!-- String inut field for Email -->
                         <input [(ngModel)]="loginUserData.Email" name="email" type="text" class="form-control rounded-0" target="blank" placeholder="email" required>
                     </div>
 
                     <div class="form-group">
+                        <!-- Password label -->
                         <label for="">Password</label>
+                        <!-- Password input field -->
                         <input [(ngModel)]="loginUserData.Password" name="password" type="text" class="form-control rounded-0" required>
                     </div>
+                    <!-- Login user button calls loginUser method -->
                     <button (click)="loginUser()"type="button" class="btn btn-success float-right">Login</button>
-                    
+                    <!-- If login failed -->
                     <h1 *ngIf="!isSuccessful">Invalid credentials</h1>
 
                 </form>

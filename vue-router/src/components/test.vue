@@ -2,16 +2,20 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
 
-
-   <h1>Login example</h1>
+   <h1>Use Token example</h1>
 
     <form @submit="postLogin" method="post">
-      <input type="text" name="email" v-model="user.Email"> <br>
-      <input type="password" name="password" v-model="user.Password"> <br>
-      <button type="submit">Login</button>
+      <label for="">Item Name</label>
+      <input type="text" name="email" v-model="item.Email"> <br>
+      <label for="">Promo Code</label>
+      <input type="password" name="password" v-model="item.Password"> <br>
+      <button type="submit">Redeem Item</button>
 
-      <h1 v-if="success">Invalid Credentials</h1>
+      <h1 v-if="failed">Could not redeem item</h1>
+      <h1 v-if="redeemed">Item redeemed</h1>
     </form>
+
+    <display-item> </display-item>
 
     
   </div>
@@ -22,40 +26,46 @@
 import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import DisplayItem from './displayItem.vue'
 
 
 Vue.use(VueAxios, axios)
 
 export default {
-  name: 'HelloWorld',
+  name: 'useToken',
   props: {
+    DisplayItem,
     msg: String
   },
   data() {
     return {
-      user: {
+      item: {
         Email: null,
-        Password: null,
-        IsAdmin: Boolean
+        Password: null
       },
 
-        success: false
+        failed: false,
+
+        redeemed: false
+
 
     }
   },
   methods: {
 
     postLogin(e) {
-      this.axios.post("http://localhost:3000/api/login", this.user)
+      this.axios.post("http://localhost:3000/api/useToken", this.item)
       .then((result)=>{
         console.log('hello' + JSON.stringify(result));
         localStorage.setItem('user', JSON.stringify(result));
-        this.$router.push('/additem');
+        this.redeemed = true;
+        this.failed = false;
        
       // console.log(user)
       })
       console.warn(this.user);
-      this.success = true;
+      this.failed = true;
+      this.redeemed = false;
       e.preventDefault();
     }
 

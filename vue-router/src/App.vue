@@ -3,15 +3,29 @@
 
  <header>  
    <ul> 
+
+     <li class="nav-item">
+  <router-link class="nav-link" to="/">Home</router-link>
+ </li>
     <li class="nav-item">
   <router-link class="nav-link" to="/register">Register</router-link>
 </li>
-<li class="nav-item">
-  <router-link class="nav-link" to="/">Home</router-link>
- </li>
+
 <li class="nav-item">
    <router-link class="nav-link" to="/login">Login</router-link>
  </li>
+ <li class="nav-item">
+   <router-link class="nav-link" to="/addItem">Dashboard</router-link>
+ </li>
+
+ <li class="nav-item">
+   <router-link class="nav-link" to="/listitem">Display item example</router-link>
+ </li>
+
+ <li class="nav-item">
+   <router-link class="nav-link" to="/useToken">Use token example</router-link>
+ </li>
+
   </ul>
  </header>
     
