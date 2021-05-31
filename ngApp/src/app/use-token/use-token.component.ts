@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../auth.service';
+import { UserStorageService } from '../user-storage.service';
 
 @Component({
   selector: 'app-use-token',
@@ -20,15 +21,22 @@ export class UseTokenComponent implements OnInit {
 
   isSuccessful = false;
 
-  tokenAmount = 1;
+  //tokenAmount;
 
-  constructor(private _auth: AuthService) { }
+  constructor(private _auth: AuthService, private _userStorage: UserStorageService) { }
 
   ngOnInit(): void {
+    const user = this._userStorage.getUser();
   }
 
+  tokenAmount = 1;
+
   useToken() {
+
     console.log(this.loginUserData)
+    const user = this._userStorage.getUser();
+
+    
 
     this._auth.useToken(this.loginUserData)
     .subscribe(
@@ -37,8 +45,9 @@ export class UseTokenComponent implements OnInit {
 
         this.isSuccessful = true
 
-        if(this.tokenAmount>0) {
-          this.tokenAmount = this.tokenAmount - 1;
+        if(this.tokenAmount>=1) {
+          //this.tokenAmount = this.tokenAmount - 1;
+          this.tokenAmount = user.Token - 1;
         }
 
       },
